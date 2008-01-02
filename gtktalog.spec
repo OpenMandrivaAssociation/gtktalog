@@ -16,6 +16,7 @@ Patch1: gtktalog-1.0.4-fix-docs-build.patch
 #gw fix bug #26517
 Patch2: gtktalog-1.0.4-report-as-text.patch
 URL: http://www.freesoftware.fsf.org/gtktalog/
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: flex gnome-libs-devel mpgtx ncurses-devel
 BuildRequires: docbook-utils
 #gw if patched:
