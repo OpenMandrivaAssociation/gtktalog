@@ -50,12 +50,6 @@ perl -pi -e "s/book1.html/index.html/" Docs/*/topic.dat
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall mkinstalldirs=`pwd`/mkinstalldirs
-mkdir -p $RPM_BUILD_ROOT/%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT/%{_menudir}/%{name}
-?package(%{name}):command="%{_bindir}/%{name}" icon="%{name}.png" \
-  needs="x11" section="System/Archiving/Other" title="GTKtalog" \
-  longtitle="The Gnome disk catalog" xdg="true"
-EOF
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
@@ -96,7 +90,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog COPYING NEWS README TODO BUGS
 %{_bindir}/*
 %{_datadir}/gtktalog
-%{_menudir}/*
 %_datadir/applications/mandriva*
 %{_libdir}/%{name}
 %{_miconsdir}/*.png
