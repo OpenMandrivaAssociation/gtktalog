@@ -1,6 +1,6 @@
 %define name gtktalog
 %define version 1.0.4
-%define release %mkrel 7
+%define release %mkrel 8
 %define theirversion %version
 
 Name: %{name}
@@ -37,7 +37,7 @@ information parameter, and find in which CD the file you are looking for is.
 %patch0 -p0
 %patch1 -p1
 %patch2 -p1
-aclocal-1.7
+aclocal-1.7 -I m4
 autoconf
 autoheader
 automake-1.7
@@ -55,7 +55,7 @@ cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Name=GTKtalog
 Comment=The Gnome disk catalog
-Exec=%{name} %U
+Exec=%{name}
 Icon=%name
 Terminal=false
 Type=Application
