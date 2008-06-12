@@ -79,11 +79,15 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/gnome/apps/Applications/gtktalog.desktop
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%if %mdkversion < 200900
 %post
 %{update_menus}
+%endif
 
+%if %mdkversion < 200900
 %postun
 %{clean_menus}
+%endif
 
 %files -f %{name}.lang
 %defattr(-,root,root,0755)
