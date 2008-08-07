@@ -1,6 +1,6 @@
 %define name gtktalog
 %define version 1.0.4
-%define release %mkrel 8
+%define release %mkrel 9
 %define theirversion %version
 
 Name: %{name}
