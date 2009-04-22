@@ -1,13 +1,13 @@
 %define name gtktalog
 %define version 1.0.4
-%define release %mkrel 9
+%define release %mkrel 10
 %define theirversion %version
 
 Name: %{name}
 Summary: The Gnome disk catalog
 Version: %{version}
 Release: %{release}
-License: GPL
+License: GPLv2+
 Group: Archiving/Other
 Source0: http://savannah.nongnu.org/download/gtktalog/gtktalog.pkg/%theirversion/%{name}-%{theirversion}.tar.bz2
 Source10: gtktalog48.png.bz2
@@ -15,6 +15,8 @@ Patch0: gtktalog-1.0.3-dont-scan-mime-types-by-default.patch
 Patch1: gtktalog-1.0.4-fix-docs-build.patch
 #gw fix bug #26517
 Patch2: gtktalog-1.0.4-report-as-text.patch
+#gw fix missing header and format strings
+Patch3: gtktalog-1.0.4-fix-build.patch
 URL: http://www.freesoftware.fsf.org/gtktalog/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: flex gnome-libs-devel mpgtx ncurses-devel
@@ -37,6 +39,8 @@ information parameter, and find in which CD the file you are looking for is.
 %patch0 -p0
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
+libtoolize --install --force
 aclocal-1.7 -I m4
 autoconf
 autoheader
