@@ -44,7 +44,7 @@ libtoolize --install --force
 aclocal -I m4
 autoconf
 autoheader
-automake
+automake --add-missing
 perl -pi -e "s/book1.html/index.html/" Docs/*/topic.dat
 
 %build
