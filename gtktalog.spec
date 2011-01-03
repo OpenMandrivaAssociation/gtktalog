@@ -1,6 +1,6 @@
 %define name gtktalog
 %define version 1.0.4
-%define release %mkrel 10
+%define release %mkrel 11
 %define theirversion %version
 
 Name: %{name}
@@ -22,7 +22,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: flex gnome-libs-devel mpgtx ncurses-devel
 BuildRequires: docbook-utils
 #gw if patched:
-BuildRequires: automake1.7
+BuildRequires: automake
 BuildRequires: gettext-devel
 Requires: file mpgtx
 
@@ -41,10 +41,10 @@ information parameter, and find in which CD the file you are looking for is.
 %patch2 -p1
 %patch3 -p1
 libtoolize --install --force
-aclocal-1.7 -I m4
+aclocal -I m4
 autoconf
 autoheader
-automake-1.7
+automake
 perl -pi -e "s/book1.html/index.html/" Docs/*/topic.dat
 
 %build
