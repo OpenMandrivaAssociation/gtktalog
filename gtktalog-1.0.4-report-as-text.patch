@@ -1,0 +1,12 @@
+--- gtktalog-1.0.4/src/gtktalog/report.c.orig	2003-06-20 21:23:58.000000000 +0200
++++ gtktalog-1.0.4/src/gtktalog/report.c	2006-10-17 13:17:07.000000000 +0200
+@@ -1104,7 +1104,8 @@
+     {
+       gb_html_report =
+ 	gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (button_html));
+-      gb_xml_report = !gb_html_report;
++      gb_xml_report =
++	gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (button_xml));
+     }
+ 
+   if (gb_check_disks && !gb_check_folders && !gb_check_files &&

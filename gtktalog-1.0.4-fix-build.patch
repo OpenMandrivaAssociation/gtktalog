@@ -1,0 +1,33 @@
+diff -p -up gtktalog-1.0.4/src/gtktalog/report.c~ gtktalog-1.0.4/src/gtktalog/report.c
+--- gtktalog-1.0.4/src/gtktalog/report.c~	2009-04-22 12:42:06.000000000 +0200
++++ gtktalog-1.0.4/src/gtktalog/report.c	2009-04-22 12:43:53.000000000 +0200
+@@ -333,7 +333,7 @@ print_file (FILE_DATA * fd, FILE * file)
+   if (gb_html_report)
+     fprintf (file, "<TR>");
+   if (gb_xml_report)
+-    fprintf (file, xml_directory_st);
++    fprintf (file, "%s", xml_directory_st);
+   if (gb_check_disks)
+     {
+       if (gb_xml_report)
+@@ -521,7 +521,7 @@ print_file (FILE_DATA * fd, FILE * file)
+   if (gb_html_report)
+     fprintf (file, "</TR>");
+   if (gb_xml_report)
+-    fprintf (file, xml_directory_ed);
++    fprintf (file, "%s", xml_directory_ed);
+   fprintf (file, "\n");
+ }
+ 
+diff -p -up gtktalog-1.0.4/src/plugins/html.cpp~ gtktalog-1.0.4/src/plugins/html.cpp
+--- gtktalog-1.0.4/src/plugins/html.cpp~	2002-04-13 22:45:30.000000000 +0200
++++ gtktalog-1.0.4/src/plugins/html.cpp	2009-04-22 12:46:06.000000000 +0200
+@@ -19,7 +19,7 @@
+  *                                                                         *
+  ***************************************************************************/
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

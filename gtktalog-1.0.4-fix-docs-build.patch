@@ -1,0 +1,54 @@
+--- gtktalog-1.0.4/Docs/C/Makefile.am~	2003-03-28 22:46:01.000000000 +0100
++++ gtktalog-1.0.4/Docs/C/Makefile.am	2004-05-07 11:16:13.654013698 +0200
+@@ -27,7 +27,7 @@
+ gtktalog/gtktalog.html: $(SGML_FILES)
+ 	-db2html gtktalog.sgml
+ 	-db2html man.sgml
+-	-mv man/man.html gtktalog
++	-mv man/index.html gtktalog/man.html
+ 
+ ## when we make dist, we include the generated HTML so people don't
+ ## have to have the docbook tools
+@@ -37,13 +37,8 @@
+ 	-cp gtktalog/stylesheet-images/* $(distdir)/gtktalog
+ 
+ install-data-local: gtktalog/gtktalog.html
+-	$(mkinstalldirs) $(DESTDIR)$(gtktalog_helpdir)/images
+-	-for file in $(srcdir)/gtktalog/*.html $(srcdir)/gtktalog/*.css $(srcdir)/gtktalog/*.gif; do \
+-	basefile=`basename $$file`; \
+-	$(INSTALL_DATA) $(srcdir)/$$file $(DESTDIR)$(gtktalog_helpdir)/$$basefile; \
+-	done
+-	rm -f $(DESTDIR)$(gtktalog_helpdir)/index.html
+-	ln -s `basename $(gtktalog_helpdir)/gtktalog.html` $(DESTDIR)$(gtktalog_helpdir)/index.html
++	$(mkinstalldirs) $(DESTDIR)$(gtktalog_helpdir)/
++	cp -r gtktalog/* $(DESTDIR)$(gtktalog_helpdir)/
+ 
+ uninstall-local:
+ 	rm -rf $(DESTDIR)$(gtktalog_helpdir)
+--- gtktalog-1.0.4/Docs/fr/Makefile.am~	2003-03-28 22:46:01.000000000 +0100
++++ gtktalog-1.0.4/Docs/fr/Makefile.am	2004-05-07 11:17:04.549972322 +0200
+@@ -27,7 +27,7 @@
+ gtktalog/gtktalog.html: $(SGML_FILES)
+ 	-db2html gtktalog.sgml
+ 	-db2html man.sgml
+-	-mv man/man.html gtktalog
++	-mv man/index.html gtktalog/man.html
+ 
+ ## when we make dist, we include the generated HTML so people don't
+ ## have to have the docbook tools
+@@ -37,13 +37,8 @@
+ 	-cp gtktalog/stylesheet-images/* $(distdir)/gtktalog
+ 
+ install-data-local: gtktalog/gtktalog.html
+-	$(mkinstalldirs) $(DESTDIR)$(gtktalog_helpdir)/images
+-	-for file in $(srcdir)/gtktalog/*.html $(srcdir)/gtktalog/*.css $(srcdir)/gtktalog/*.gif; do \
+-	basefile=`basename $$file`; \
+-	$(INSTALL_DATA) $(srcdir)/$$file $(DESTDIR)$(gtktalog_helpdir)/$$basefile; \
+-	done
+-	rm -f $(DESTDIR)$(gtktalog_helpdir)/index.html
+-	ln -s `basename $(gtktalog_helpdir)/gtktalog.html` $(DESTDIR)$(gtktalog_helpdir)/index.html
++	$(mkinstalldirs) $(DESTDIR)$(gtktalog_helpdir)/
++	cp -r gtktalog/* $(DESTDIR)$(gtktalog_helpdir)/
+ 
+ uninstall-local:
+ 	rm -rf $(DESTDIR)$(gtktalog_helpdir)
