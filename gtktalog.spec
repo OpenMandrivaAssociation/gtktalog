@@ -17,7 +17,7 @@ Patch1: gtktalog-1.0.4-fix-docs-build.patch
 Patch2: gtktalog-1.0.4-report-as-text.patch
 #gw fix missing header and format strings
 Patch3: gtktalog-1.0.4-fix-build.patch
-URL: http://www.freesoftware.fsf.org/gtktalog/
+URL: https://www.freesoftware.fsf.org/gtktalog/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: flex gnome-libs-devel mpgtx ncurses-devel
 BuildRequires: docbook-utils
